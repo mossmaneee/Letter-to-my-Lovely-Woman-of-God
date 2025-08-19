@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe6f0;
+      color: #4b0026;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #ffb6c1;
+      padding: 30px;
+      border-bottom: 10px solid #800020;
+    }
+    header h1 {
+      font-size: 2.5em;
+    }
+    section {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 700px;
+      background: #fff0f5;
+      border: 3px solid #800020;
+      border-radius: 20px;
+      position: relative;
+    }
+    .bowtie {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+    }
+    .bowtie.top-left {
+      top: -25px;
+      left: -25px;
+    }
+    .bowtie.bottom-right {
+      bottom: -25px;
+      right: -25px;
+    }
+    img.photo {
+      max-width: 90%;
+      margin: 15px auto;
+      border-radius: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+    p.fade-text {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    video {
+      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 15px;
+      border: 3px solid #800020;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday My Love 🎉💖</h1>
+    <p class="fade-text">Even though we’re far apart, I made this just for you.</p>
+  </header>
+
+  <section>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Red_bow_tie_icon.png" alt="Bowtie" class="bowtie top-left">
+    <h2 class="fade-text">Our Memories</h2>
+    <p class="fade-text">Here are little reminders of the love we share 💕</p>
+    <img src="your-photo1.jpg" alt="Memory 1" class="photo">
+    <img src="your-photo2.jpg" alt="Memory 2" class="photo">
+  </section>
+
+  <section>
+    <h2 class="fade-text">A Special Message</h2>
+    <p class="fade-text">Click play to hear me say what my heart feels 💌</p>
+    <video controls>
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section>
+    <h2 class="fade-text">Forever Yours</h2>
+    <p class="fade-text">No matter the distance, you are always in my heart. ❤️</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Red_bow_tie_icon.png" alt="Bowtie" class="bowtie bottom-right">
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.photo, .fade-text').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
